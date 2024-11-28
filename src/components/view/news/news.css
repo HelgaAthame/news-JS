@@ -1,3 +1,11 @@
+.news {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 .news__item {
     display: flex;
     flex-direction: column;
@@ -124,7 +132,7 @@
 @media (min-width: 640px) {
     .news__item {
         flex-direction: row;
-        max-width: 700px;
+        width: 700px;
     }
 
     .news__item .news__meta {
