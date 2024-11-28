@@ -30,9 +30,21 @@ const baseConfig = {
     ],
 };
 
+const devServerConfig = {
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, '../dist'),
+        },
+        compress: true,
+        port: 9000,
+        open: true,
+        hot: true,
+    },
+};
+
 module.exports = ({ mode }) => {
     const isProductionMode = mode === 'prod';
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
 
-    return merge(baseConfig, envConfig);
+    return merge(baseConfig, devServerConfig, envConfig);
 };
