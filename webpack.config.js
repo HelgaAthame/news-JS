@@ -19,7 +19,8 @@ const baseConfig = {
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/news-JS/', // Путь для GitHub Pages
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -33,7 +34,7 @@ const baseConfig = {
 const devServerConfig = {
     devServer: {
         static: {
-            directory: path.resolve(__dirname, '../dist'),
+            directory: path.resolve(__dirname, 'dist'), // Исправлено на правильный путь
         },
         compress: true,
         port: 9000,
